@@ -3,22 +3,22 @@ import React from 'react';
 const HeroSelection = () => {
     const heroes = [
         {
-            name: 'Aleister',
+            name: '50 USDT',
             imgSrc: 'img/character-1.jpg',
             description: "Aleister, the former demonlord, is always looking at others bearing a malefic grin upon his twisted visage, harnessing all the power he can muster as he directs bolts of pure chaos towards his foes.",
         },
         {
-            name: 'Hecate',
+            name: '100 USDT',
             imgSrc: 'img/character-2.jpg',
             description: "The only place Hecate feels safe is total Darkness, where she envelopes herself and thrives, until it totally consumes her existence. Until that strange familiar odor which vanished, reappears and stabs you - in the Dark.",
         },
         {
-            name: 'Theregar',
+            name: '200 USDT',
             imgSrc: 'img/character-3.jpg',
             description: "Theregar's smile looks intimidating as it is, yet is amplified by the fel green hue of the enchantments he is preparing: As he deflects his attackers, his foes are enlightened by his immense control of the Shadows...",
         },
         {
-            name: 'Roth',
+            name: '500 USDT',
             imgSrc: 'img/character-4.jpg',
             description: "Void claimed all in the Halls of Reflection as Roth rised from the Stone, his voice echoing again in the sultry darkness. His enemies fallen, their eyesight blurred, their powers escaping their body as he consumed their souls...",
         },
@@ -38,7 +38,7 @@ const HeroSelection = () => {
                         <p>&nbsp;<br />&nbsp;</p>
                     </div>
                     <div className="row">
-                        <h2>Choose your Hero</h2>
+                        <h2>Choose your Rate</h2>
                         {heroes.map((hero, index) => (
                             <article key={index} className="col-sm-6 col-md-3 box features-item thumbnail-100" data-toggle="modal" data-target="#shop-modal">
                                 <img className="features-img" src={hero.imgSrc} alt={`${hero.name} Hero Character`} data-Strength="9" data-Dexterity="7" data-Agility="7" data-Willpower="8" data-Intelligence="4" />

@@ -15,6 +15,7 @@ function App() {
       <GallerySection />
       <Divider />
       <StoreSection />
+      <Divider />
     </div>
   );
 }
