@@ -23,7 +23,7 @@ const WalletConnect = ({ defaultAccountChange }) => {
                 .then(async (result) => {
                     await accountChangeHandler(result[0]);
                     defaultAccountChange(result[0]);
-                    setConnectButtonText(`${result[0].slice(0, 4)}...${result[0].slice(-4)}`);
+                    setConnectButtonText(`( ${result[0].slice(0, 4)}...${result[0].slice(-4)} )`);
                 })
         } else {
             swal('Error', 'Need to install MetaMask!', 'error')

@@ -1,5 +1,5 @@
 import React from 'react';
-const GallerySection = ({ defaultAccount }) => {
+const GallerySection = () => {
     return (
         <div className="row pattern-dark">
             <section className="gallery" id="home">
@@ -24,10 +24,11 @@ const GallerySection = ({ defaultAccount }) => {
 
                         {/* Wrapper for slides */}
                         <div className="carousel-inner" role="listbox" style={{
-                            display: 'flex', justifyContent: 'center', alignItems: 'center'
+                            display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column'
                         }}>
                             <a href="#ido" style={{
                                 cursor: 'pointer',
+                                textDecoration: 'none'
                             }}>
                                 <h3>Join IDO</h3>
                             </a>

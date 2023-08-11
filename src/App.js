@@ -18,9 +18,9 @@ function App() {
     <div className="App">
       <Navbar defaultAccountChange={handleDefaultAccountChange} />
       <Divider />
-      <GallerySection defaultAccount={defaultAccount} />
+      <GallerySection />
       <Divider />
-      <HeroSelection />
+      <HeroSelection defaultAccount={defaultAccount} />
       <Divider />
       <DragonTokenIntroduction />
       <Divider />

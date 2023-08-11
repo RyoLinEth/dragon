@@ -13,9 +13,9 @@ const Navbar = ({ defaultAccountChange }) => {
     };
 
     const handleDefaultAccountChange = (value) => {
-        console.log(value)
+        defaultAccountChange(value)
     };
-    
+
     return (
         <nav className="navbar navbar-inverse navbar-custom navbar-fixed-top">
             <div className="container">
