@@ -15,7 +15,9 @@ const Navbar = () => {
         <nav className="navbar navbar-inverse navbar-custom navbar-fixed-top">
             <div className="container">
                 <div className="navbar-header">
-                    <a className="navbar-brand navbar-logo" href="#home"></a>
+                    <a className="navbar-brand navbar-logo" href="#home" style={{
+                        color: 'transparent'
+                    }}>Home</a>
                     <button
                         type="button"
                         className="search-button"
@@ -66,12 +68,12 @@ const Navbar = () => {
                         <li className="plain-link">
                             <a href="#dragons" onClick={closeMenu}>
                                 About
-                                </a>
+                            </a>
                         </li>
                         <li className="plain-link">
                             <a href="#store" onClick={closeMenu}>
                                 Store
-                                </a>
+                            </a>
                         </li>
                         <li className="plain-link">
                             <a href="#contact" onClick={closeMenu}>

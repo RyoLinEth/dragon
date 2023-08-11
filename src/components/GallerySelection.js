@@ -1,11 +1,10 @@
 import React from 'react';
 import heroImage from '../img/video-thumbnail.jpg'
-import heroImage2 from '../img/video-play.png'
 
 const GallerySection = () => {
     return (
         <div className="row pattern-dark">
-            <section className="gallery" id="home">
+            <section className="gallery" id="gallery">
                 <div className="container">
                     <div className="row">
                         <h2>The Dragon Coin</h2>

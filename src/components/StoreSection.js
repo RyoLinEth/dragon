@@ -1,25 +1,6 @@
 import React from 'react';
 
 const StoreSection = () => {
-
-    const items = [
-        {
-            imgSrc: 'img/dragonic-gameplay-01.jpg',
-            price: '€ 4.99',
-            name: 'AppStore - iOS Version',
-        },
-        {
-            imgSrc: 'img/dragonic-gameplay-02.jpg',
-            price: '€ 4.49',
-            name: 'Play Store - Android Version',
-        },
-        {
-            imgSrc: 'img/dragonic-gameplay-03.jpg',
-            price: '€ 5.99',
-            name: 'Steam - PC Version',
-        },
-        // Add more items as needed
-    ];
     return (
         <div className="row pattern">
             <section className="store" id="store">

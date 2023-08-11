@@ -33,7 +33,6 @@ const GallerySection = () => {
         }
     ];
     const [showDescriptions, setShowDescriptions] = useState(Array(dragons.length).fill(false));
-    const [isExpanded, setIsExpanded] = useState(false);
 
     const toggleDescription = (index) => {
         const newShowDescriptions = [...showDescriptions];
@@ -41,13 +40,6 @@ const GallerySection = () => {
         setShowDescriptions(newShowDescriptions);
     };
 
-    const toggleLayout = () => {
-        setIsExpanded(!isExpanded);
-    };
-
-    const getColumnSize = () => {
-        return isExpanded ? '6' : '12'; // Change this to '6' for expanded, '12' for normal
-    };
 
     return (
         <div className="row pattern">
@@ -59,7 +51,7 @@ const GallerySection = () => {
                     <div className="row">
                         <h2 style={{ padding: '10px' }}>Choose your Dragon</h2>
                         {dragons.map((dragon, index) => (
-                            <article key={index} className={`col-sm-${getColumnSize()} col-md-3 box features-item thumbnail-100`} data-toggle="modal" data-target="#shop-modal">
+                            <article key={index} className={`col-sm-5 col-md-3 box features-item thumbnail-100`} data-toggle="modal" data-target="#shop-modal">
                                 <img className="features-img" src={dragon.imgSrc} alt={`${dragon.name} Hero Character`} data-Strength="9" data-Dexterity="7" data-Agility="7" data-Willpower="8" data-Intelligence="4"
                                     style={{ padding: '20px' }}
                                 />
