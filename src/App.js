@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import './css/App.css';
 import Navbar from './components/Navbar';
 import Divider from './components/Divider';
@@ -7,11 +8,17 @@ import StoreSection from './components/StoreSection';
 import DragonTokenIntroduction from './components/DragonCoinIntro';
 
 function App() {
+
+  const [defaultAccount, setDefaultAccount] = useState(null);
+
+  const handleDefaultAccountChange = (value) => {
+    setDefaultAccount(value);
+  }
   return (
     <div className="App">
-      <Navbar />
+      <Navbar defaultAccountChange={handleDefaultAccountChange} />
       <Divider />
-      <GallerySection />
+      <GallerySection defaultAccount={defaultAccount} />
       <Divider />
       <HeroSelection />
       <Divider />

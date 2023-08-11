@@ -1,25 +1,17 @@
 import React, { useState, useEffect } from 'react'
-import { ethers } from 'ethers';
 import swal from 'sweetalert'
-import ErrorMessage from './ErrorMessage';
 
-const WalletConnect = ({ defaultAccountChange, defaultChainChange, language }) => {
+const WalletConnect = ({ defaultAccountChange }) => {
     const [defaultAccount, setDefaultAccount] = useState(null)
     const [connectButtonText, setConnectButtonText] = useState("Connect Wallet")
 
-    const [errorText, setErrorText] = useState(null);
-
     useEffect(() => {
         changingAccount();
-        defaultAccountChange(defaultAccount);
     }, [defaultAccount])
 
-    async function changingAccount() {
+    const changingAccount = async () => {
         if (window.ethereum) {
             window.ethereum.on('accountsChanged', () => {
-                connectWalletHandler()
-            })
-            window.ethereum.on('chainChanged', () => {
                 connectWalletHandler()
             })
         }
@@ -30,6 +22,7 @@ const WalletConnect = ({ defaultAccountChange, defaultChainChange, language }) =
             window.ethereum.request({ method: 'eth_requestAccounts' })
                 .then(async (result) => {
                     await accountChangeHandler(result[0]);
+                    defaultAccountChange(result[0]);
                     setConnectButtonText(`${result[0].slice(0, 4)}...${result[0].slice(-4)}`);
                 })
         } else {
@@ -45,30 +38,25 @@ const WalletConnect = ({ defaultAccountChange, defaultChainChange, language }) =
     const checkCorrectNetwork = async () => {
         const { ethereum } = window
         const chainId = await ethereum.request({ method: 'eth_chainId' })
+        if (chainId !== "0x38") console.log("Wrong Chain");
         console.log('Connected to chain:' + chainId)
-        defaultChainChange(chainId);
     }
 
     return (
         <div className="btnConnect">
-
-            {
-                errorText !== null &&
-                <ErrorMessage
-                    errorMessage={errorText}
-                    setErrorText={setErrorText}
-                />
-            }
             <button
                 onClick={connectWalletHandler}
-                className="btn btn-primary rounded-pill"
+                // className="btn btn-primary rounded-pill"
                 style={{
                     maxWidth: '120px',
-                    fontSize: '12px',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    height: '40px'
+                    height: '45px',
+                    backgroundColor: 'transparent',
+                    border: 'transparent',
+                    color: '#ECD19A',
+                    fontSize: '15px'
                 }}
             >{connectButtonText}</button>
         </div>

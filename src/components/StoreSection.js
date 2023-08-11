@@ -3,10 +3,10 @@ import React from 'react';
 const StoreSection = () => {
     return (
         <div className="row pattern">
-            <section className="store" id="store">
+            <section className="store" id="mechanism">
                 <div className="container">
                     <div className="row">
-                        <h2>Choose your weapon</h2>
+                        <h2 style={{ padding: '10px' }}>Dragon Mechanism</h2>
                         <p className="section-description">
                             Unleash your revenge upon mankind as you turn and look towards the human cities, only to see a great pillar of flame hit their cathedrals, the ensuing shockwave and flamewall erasing all signs of their kingdoms' existence.
                         </p>

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import WalletConnect from './WallectConnector';
 
-const Navbar = () => {
+const Navbar = ({ defaultAccountChange }) => {
     const [isExpanded, setIsExpanded] = useState(false);
 
     const toggleMenu = () => {
@@ -11,22 +12,33 @@ const Navbar = () => {
         setIsExpanded(false);
     };
 
+    const handleDefaultAccountChange = (value) => {
+        console.log(value)
+    };
+    
     return (
         <nav className="navbar navbar-inverse navbar-custom navbar-fixed-top">
             <div className="container">
                 <div className="navbar-header">
-                    <a className="navbar-brand navbar-logo" href="#home" style={{
-                        color: 'transparent'
-                    }}>Home</a>
-                    <button
-                        type="button"
-                        className="search-button"
-                        data-toggle="dropdown"
-                        aria-haspopup="true"
-                        aria-expanded="false"
-                    >
-                        <span className="ion-search"></span>
-                    </button>
+                    <div style={{ display: 'flex', flexDirection: 'row' }}>
+                        <a className="navbar-brand navbar-logo" href="#home" style={{
+                            color: 'transparent'
+                        }}>Home</a>
+                        <button
+                            type="button"
+                            className="search-button"
+                            data-toggle="dropdown"
+                            aria-haspopup="true"
+                            aria-expanded="false"
+                        >
+                            <span className="ion-search"></span>
+                        </button>
+                        <div style={{ marginLeft: '24vw' }}>
+                            <WalletConnect
+                                defaultAccountChange={handleDefaultAccountChange}
+                            />
+                        </div>
+                    </div>
                     <div className="dropdown-menu dropdown-search-box animated fadeIn">
                         <span className="ion-android-arrow-dropup searchbox-caret animated fadeIn"></span>
                         <form method="get" action="#">
@@ -55,7 +67,7 @@ const Navbar = () => {
                         }`}
                     id="main-nav"
                 >
-                    <ul className="nav navbar-nav navbar-right">
+                    <ul className="nav navbar-nav navbar-right" style={{ opacity: '0.9' }}>
                         <li className="plain-link">
                             <a href="#home" onClick={closeMenu}>
                                 Home
@@ -71,13 +83,13 @@ const Navbar = () => {
                             </a>
                         </li>
                         <li className="plain-link">
-                            <a href="#store" onClick={closeMenu}>
-                                Store
+                            <a href="#mechanism" onClick={closeMenu}>
+                                Mechanism
                             </a>
                         </li>
                         <li className="plain-link">
                             <a href="#contact" onClick={closeMenu}>
-                                Contact
+                                Social
                             </a>
                         </li>
                     </ul>

@@ -52,7 +52,7 @@ const GallerySection = () => {
                         <h2 style={{ padding: '10px' }}>Choose your Dragon</h2>
                         {dragons.map((dragon, index) => (
                             <article key={index} className={`col-sm-5 col-md-3 box features-item thumbnail-100`} data-toggle="modal" data-target="#shop-modal">
-                                <img className="features-img" src={dragon.imgSrc} alt={`${dragon.name} Hero Character`} data-Strength="9" data-Dexterity="7" data-Agility="7" data-Willpower="8" data-Intelligence="4"
+                                <img className="features-img" src={dragon.imgSrc} alt={`${dragon.name} Hero Character`}
                                     style={{ padding: '20px' }}
                                 />
                                 <h3>{dragon.price}</h3>
@@ -60,7 +60,12 @@ const GallerySection = () => {
                                 <div onClick={() => toggleDescription(index)} className="description-toggle-icon">
                                     <h3 style={{ fontSize: '15px' }}>Dragon info</h3>
                                 </div>
-                                {showDescriptions[index] && <p className="features-p">{dragon.description}</p>}
+                                {
+                                    showDescriptions[index] &&
+                                    <p
+                                        className="features-p"
+                                        style={{ padding: '20px' }}
+                                    >{dragon.description}</p>}
                             </article>
                         ))}
                     </div>

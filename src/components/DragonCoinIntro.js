@@ -39,7 +39,7 @@ const DragonTokenIntroduction = () => {
                 <div className="container">
                     <div className="row">
                         <h2>Dragon</h2>
-                        <p className="section-description">
+                        <div className="section-description">
                             <div style={sectionStyle}>
                                 <div style={introStyle}>
                                     <h1 style={headerStyle}>Introducing Dragon Token: Unleash the Power of Digital Assets</h1>
@@ -77,7 +77,7 @@ const DragonTokenIntroduction = () => {
                                     </p>
                                 </div>
                             </div>
-                        </p>
+                        </div>
                     </div>
                 </div>
             </section>
